@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Temel Ödevi</title>
+    <style>
+        /* ========== GENEL SIFIRLAMA & TEMEL STİLLER ========== */
+
+        /* --- Grup Seçici (group selector): h1, h2, p, ul --- */
+        h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e8edf2;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* Sayfa kapsayıcı */
+        .wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #c5cdd6;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        /* ========== ÜST MENÜ (NAV) ========== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 28px;
+            border-bottom: 2px solid #b0bec5;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* --- Hiyerarşik Seçici 1: nav ul --- */
+        nav ul {
+            list-style: none;
+        }
+
+        /* --- Hiyerarşik Seçici 2: nav ul li --- */
+        nav ul li {
+            display: inline-block;
+            margin-left: 6px;
+        }
+
+        /* --- Hiyerarşik Seçici 3: nav ul li a --- */
+        nav ul li a {
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover efekti */
+        nav ul li a:hover {
+            background-color: #6b83a5;
+            color: #ffffff;
+        }
+
+        /* Aktif menü öğesi */
+        nav ul li a.active {
+            background-color: #6b83a5;
+            color: #ffffff;
+        }
+
+        /* ========== HEADER ALANI ========== */
+        header {
+            padding: 28px 28px 20px 28px;
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        /* --- Hiyerarşik Seçici 4: header p --- */
+        header p {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* ========== İKİ SÜTUNLU İÇERİK ALANI ========== */
+        .content-area {
+            padding: 0 28px 28px 28px;
+            display: flex;
+            gap: 24px;
+        }
+
+        /* Sol İçerik Kutusu */
+        .main-content {
+            display: inline-block;
+            width: 55%;
+            vertical-align: top;
+            border: 2px solid #e2c275;
+            border-radius: 6px;
+            background-color: #fdf8ec;
+            padding: 22px;
+            box-sizing: border-box;
+        }
+
+        .main-content h2 {
+            font-size: 19px;
+            color: #2c3e50;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #e2c275;
+            padding-bottom: 10px;
+        }
+
+        /* --- Hiyerarşik Seçici 5: .main-content p --- */
+        .main-content p {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.75;
+            text-align: justify;
+            margin-bottom: 14px;
+        }
+
+        /* Sağ Yan Menü / Bilgi Kutusu */
+        .sidebar {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            border: 2px solid #a8cce0;
+            border-radius: 6px;
+            background-color: #eef6fb;
+            padding: 22px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            font-size: 19px;
+            color: #2c3e50;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #a8cce0;
+            padding-bottom: 10px;
+        }
+
+        /* --- Hiyerarşik Seçici 6: .sidebar p --- */
+        .sidebar p {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.75;
+            text-align: justify;
+            margin-bottom: 14px;
+        }
+
+        /* Kalın metin vurgusu */
+        .main-content p strong,
+        .sidebar p strong {
+            color: #333333;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            border-top: 2px solid #b0bec5;
+            text-align: center;
+            padding: 18px 28px;
+            background-color: #f8f9fa;
+        }
+
+        /* --- Hiyerarşik Seçici 7: footer p --- */
+        footer p {
+            font-size: 13px;
+            color: #888888;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- ÜST MENÜ: ul > li > a yapısı, display: inline-block ile yatay -->
+        <nav>
+            <span class="logo">CSS Temel Ödevi</span>
+            <ul>
+                <li><a href="https://www.marmara.edu.tr/" target="_blank" class="active">Okulum</a></li>
+                <li><a href="https://www.linkedin.com/in/taha-bas-71b915267/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/pearlofegea" target="_blank">GitHub</a></li>
+                <li><a href="https://www.youtube.com/@tahadashbash" target="_blank">YouTube</a></li>
+                <li><a href="https://www.linkedin.com/company/marmara-run-club/?viewAsMember=true">Koşu Kulübü</a></li>
+            </ul>
+        </nav>
+
+        <!-- HEADER ALANI: h1 + kısa p metni -->
+        <header>
+            <h1>Taha Baş</h1>
+            <p>
+                3. sınıf bilgisayar mühendisliği öğrencisi, potansiyelini kullanamıyor gibi.
+            </p>
+        </header>
+
+        <!-- İKİ SÜTUNLU İÇERİK ALANI -->
+        <div class="content-area">
+
+            <!-- Sol: İçerik kutusu (en az 2 adet p etiketi) -->
+            <div class="main-content">
+                <h2>Run Club</h2>
+                <p>
+                    Selamlar ben Taha marmara run club takım kaptanıyım
+                    <strong>kulübümüzün</strong> ciddi sponsorluk ve sosyal medya tarafında eksiklikleri var.
+                </p>
+                <p>
+                    Amacımız sporu ve bu patlayan koşu kulübü muhabbetini yakalamak <strong>aynı zamanda</strong> halen
+                    <strong>kulüp</strong> değiliz.
+                </p>
+            </div>
+
+            <!-- Sağ: Yan Menü / Bilgi kutusu (en az 2 adet p etiketi) -->
+            <aside class="sidebar">
+                <h2>Lifestyle</h2>
+                <p>
+                    Taha Baş hibrit yaşam tarzıyla ne yapmaya çalışıyor?
+                </p>
+                <p>
+                    Spor yaparak kas geliştirerek para kazanacağını falan zannediyor acilen daha iyi çevre statü edinip
+                    sosyal medyaya içerik üretmeli.
+                </p>
+            </aside>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
