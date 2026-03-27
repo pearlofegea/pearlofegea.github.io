@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha Baş - Flexbox Ödevi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ana kapsayıcı: 100vh, flex column -->
+    <div class="wrapper">
+
+        <!-- ========== 1) NAVBAR - 10vh ========== -->
+        <!-- Flex: justify-content: space-between, align-items: center -->
+        <nav>
+            <span class="logo">Taha Baş</span>
+            <!-- ul > li > a yapısı (Lab 2 gereksinimi) -->
+            <ul>
+                <li><a href="https://www.marmara.edu.tr/" target="_blank" class="active">Okulum</a></li>
+                <li><a href="https://www.linkedin.com/in/taha-bas-71b915267/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/pearlofegea" target="_blank">GitHub</a></li>
+                <li><a href="https://www.youtube.com/@tahadashbash" target="_blank">YouTube</a></li>
+            </ul>
+        </nav>
+
+        <!-- ========== 2) HERO - 30vh ========== -->
+        <!-- Flex: row, space-between, align-items: stretch -->
+        <section class="hero">
+            <!-- Sol: Metin + Buton -->
+            <div class="hero-text">
+                <h1>Merhaba, Ben Taha</h1>
+                <p>
+                    3. sınıf bilgisayar mühendisliği öğrencisi.
+                    <strong>Marmara Run Club</strong> takım kaptanıyım.
+                    Yazılım, yapay zeka ve spor alanlarında kendimi geliştiriyorum.
+                </p>
+                <a href="#iletisim" class="btn">İletişime Geç</a>
+            </div>
+            <!-- Sağ: Görsel Placeholder (stretch ile esner) -->
+            <div class="hero-visual">
+                <span>Görsel Alanı</span>
+            </div>
+        </section>
+
+        <!-- ========== 3) KARTLAR - 30vh ========== -->
+        <!-- Flex: wrap, gap -->
+        <section class="cards-section">
+            <div class="card">
+                <h2>Run Club</h2>
+                <p><strong>Kulübümüze</strong>okuldan katılım yetersiz </p>
+            </div>
+            <div class="card">
+                <h2>Lifestyle</h2>
+                <p>Spor yaparak estetik odaklı fitness içerikleri üretiyorum.</p>
+            </div>
+            <div class="card">
+                <h2>Yazılım</h2>
+                <p>Python, Java ve C++ ile projeler geliştiriyorum.</p>
+            </div>
+            <div class="card">
+                <h2>AI / ML</h2>
+                <p>Veri bilimi ve makine öğrenmesi alanında <strong>kendimi</strong> geliştiriyorum.</p>
+            </div>
+            <div class="card">
+                <h2>YouTube</h2>
+                <p>Bilgisayar mühendisliği yolculuğu ve teknoloji içerikleri.</p>
+            </div>
+            <div class="card">
+                <h2>Hedefler</h2>
+                <p>Yurt dışında yazılım mühendisi olarak çalışmak istiyorum.</p>
+            </div>
+        </section>
+
+        <!-- ========== 4) FLEX GROW - 20vh ========== -->
+        <!-- flex-grow: 1-2-1, align-items: stretch -->
+        <section class="grow-section">
+            <div class="grow-box grow-1">
+                <h2>Eğitim</h2>
+                <p>Marmara Üniversitesi — Bilgisayar Mühendisliği</p>
+            </div>
+            <div class="grow-box grow-2">
+                <h2>Deneyim</h2>
+                <p>Eğitim sektöründe IT destek ve koordinatörlük. Student Analytics Agent projesi ile AI pipeline geliştirme.</p>
+            </div>
+            <div class="grow-box grow-1">
+                <h2>İletişim</h2>
+                <p>LinkedIn ve GitHub üzerinden ulaşabilirsiniz.</p>
+            </div>
+        </section>
+
+        <!-- ========== 5) FOOTER - 10vh ========== -->
+        <!-- Flex: justify-content: center, align-items: center -->
+        <footer>
+            <p>&copy; 2026 Taha Baş — Marmara Üniversitesi Bilgisayar Mühendisliği</p>
+        </footer>
+
+    </div>
+
+    <!-- ========== İLETİŞİM FORMU (Lab 3 - Box Model) ========== -->
+    <!-- 100vh dışında, scroll ile ulaşılır -->
+    <div class="contact-container" id="iletisim">
+        <h2>İletişim Formu</h2>
+        <form>
+            <label for="adSoyad">Ad Soyad</label>
+            <input type="text" id="adSoyad" name="adSoyad" placeholder="Adınızı ve soyadınızı giriniz">
+
+            <label for="eposta">E-posta</label>
+            <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com">
+
+            <label for="konu">Konu</label>
+            <select id="konu" name="konu">
+                <option value="" disabled selected>Bir konu seçiniz</option>
+                <option value="is-teklifi">İş Teklifi</option>
+                <option value="soru">Soru</option>
+                <option value="geri-bildirim">Geri Bildirim</option>
+            </select>
+
+            <label for="mesaj">Mesaj</label>
+            <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazınız..."></textarea>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+</body>
+</html>

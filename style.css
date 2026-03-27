@@ -1,0 +1,325 @@
+/* ========== GENEL SIFIRLAMA ========== */
+
+/* --- Grup Seçici 1: h1, h2, p, ul --- */
+h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8edf2;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== ANA KAPSAYICI: 100vh + flex column ========== */
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;        /* Dikey yerleşim */
+    max-width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* ========== 1) NAVBAR — 10vh ========== */
+/* Flex: justify-content: space-between, align-items: center */
+nav {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+    border-bottom: 2px solid #b0bec5;
+    background-color: #ffffff;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* --- Hiyerarşik Seçici 1: nav ul --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+}
+
+/* --- Hiyerarşik Seçici 2: nav ul li --- */
+nav ul li {
+    display: inline-block;
+}
+
+/* --- Hiyerarşik Seçici 3: nav ul li a --- */
+nav ul li a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover efekti */
+nav ul li a:hover {
+    background-color: #6b83a5;
+    color: #ffffff;
+}
+
+/* Aktif menü öğesi */
+nav ul li a.active {
+    background-color: #6b83a5;
+    color: #ffffff;
+}
+
+/* ========== 2) HERO — 30vh ========== */
+/* Flex: row, space-between, align-items: stretch */
+.hero {
+    height: 30vh;
+    display: flex;
+    flex-direction: row;           /* Yatay yerleşim */
+    justify-content: space-between;
+    align-items: stretch;          /* Görsel kutusu yükseklikte esnesin */
+    padding: 20px 28px;
+    gap: 24px;
+    background-color: #ffffff;
+}
+
+/* --- Hiyerarşik Seçici 4: .hero .hero-text --- */
+.hero .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hero-text h1 {
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* --- Hiyerarşik Seçici 5: .hero-text p --- */
+.hero-text p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* Kalın metin vurgusu */
+.hero-text p strong {
+    color: #333333;
+}
+
+/* Buton */
+.btn {
+    display: inline-block;
+    background-color: #6b83a5;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background-color: #556b8a;
+}
+
+/* Görsel Placeholder (stretch ile tam yükseklik) */
+.hero-visual {
+    flex: 0 0 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eef6fb;
+    border: 2px solid #a8cce0;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #6b83a5;
+    font-weight: bold;
+}
+
+/* ========== 3) KARTLAR — 30vh ========== */
+/* Flex: wrap, gap */
+.cards-section {
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;               /* Sığmazsa alt satıra geçer */
+    gap: 12px;
+    padding: 12px 28px;
+    background-color: #f8f9fa;
+    align-content: flex-start;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 12px);  /* 3 kart yan yana */
+    min-width: 160px;
+    border: 2px solid #e2c275;
+    border-radius: 6px;
+    background-color: #fdf8ec;
+    padding: 14px;
+    overflow: hidden;
+}
+
+.card h2 {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e2c275;
+    padding-bottom: 6px;
+}
+
+/* --- Hiyerarşik Seçici 6: .card p --- */
+.card p {
+    font-size: 12px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* --- Grup Seçici 2: .card p strong, .hero-text p strong --- */
+.card p strong,
+.hero-text p strong {
+    color: #333333;
+}
+
+/* ========== 4) FLEX GROW — 20vh ========== */
+/* flex-grow: 1-2-1, align-items: stretch */
+.grow-section {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;          /* Kutuların yüksekliği esnesin */
+    gap: 12px;
+    padding: 12px 28px;
+    background-color: #ffffff;
+}
+
+.grow-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #a8cce0;
+    border-radius: 6px;
+    background-color: #eef6fb;
+    padding: 16px;
+}
+
+.grow-1 {
+    flex-grow: 1;                  /* 1 birim genişlik */
+}
+
+.grow-2 {
+    flex-grow: 2;                  /* 2 birim genişlik — ortadaki geniş */
+}
+
+/* --- Hiyerarşik Seçici 7: .grow-box h2 --- */
+.grow-box h2 {
+    font-size: 15px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.grow-box p {
+    font-size: 12px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* ========== 5) FOOTER — 10vh ========== */
+/* Flex: justify-content: center, align-items: center */
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;       /* Yatay ortala */
+    align-items: center;           /* Dikey ortala */
+    border-top: 2px solid #b0bec5;
+    background-color: #f8f9fa;
+}
+
+/* --- Hiyerarşik Seçici 8: footer p --- */
+footer p {
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.5;
+}
+
+/* ========== İLETİŞİM FORMU (Lab 3 - Box Model) ========== */
+
+.contact-container {
+    width: 50%;
+    margin: 30px auto;
+    padding: 28px;
+    border: 2px solid #b0bec5;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.contact-container h2 {
+    font-size: 19px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #b0bec5;
+    padding-bottom: 10px;
+}
+
+.contact-container label {
+    display: block;
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* --- Grup Seçici 3: input, select, textarea --- */
+.contact-container input,
+.contact-container select,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #c5cdd6;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #ffffff;
+}
+
+.contact-container textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* --- Hiyerarşik Seçici 9: .contact-container input:focus vb. --- */
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #6b83a5;
+}
+
+/* Gönder butonu */
+.contact-container button {
+    background-color: #6b83a5;
+    color: #ffffff;
+    border: none;
+    padding: 12px 36px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-container button:hover {
+    background-color: #556b8a;
+}
